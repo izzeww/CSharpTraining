@@ -1,7 +1,4 @@
 ﻿namespace CSharpTraining
 {
-    public record Earning(DateOnly Date, double Eps, double Estimate)
-    {
-
-    }
+    public record Earning(string ticker, DateOnly Date, double Eps);
 }
