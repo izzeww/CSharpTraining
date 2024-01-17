@@ -16,8 +16,7 @@ namespace CSharpTraining
 
             string jsonString = JsonSerializer.Serialize(earnings);
 
-            using StreamWriter outputfile = new StreamWriter("earnings.json");
-            outputfile.WriteLine(jsonString);
+            File.WriteAllText("earnings.json", jsonString);
         }
     }
 }
