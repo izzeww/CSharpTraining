@@ -14,9 +14,16 @@ namespace CSharpTraining
                 new Earning("AMD", new DateOnly(2024, 04, 01), 4.20),
             };
 
-            string jsonString = JsonSerializer.Serialize(earnings);
 
-            File.WriteAllText("earnings.json", jsonString);
+            File.WriteAllText(
+                @"C:\Users\izzew\source\repos\CSharpTraining\CSharpTraining\earnings.json",
+                JsonSerializer.Serialize(earnings));
+
+            string textFromFile = File.ReadAllText(@"C:\Users\izzew\source\repos\CSharpTraining\CSharpTraining\earnings.json");
+
+            Earning[]? earningsFromJson = JsonSerializer.Deserialize<Earning[]>(textFromFile);
+
+            Console.WriteLine(earningsFromJson[0].Eps);
         }
     }
 }
